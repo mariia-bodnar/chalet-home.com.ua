@@ -47,8 +47,8 @@ error_reporting(E_ALL);
 
 //Після інсталяції НЕ ЗМІНЮВАТИ!
 define('WL_VERSION', '1.3');
-define('SITE_EMAIL', 'info@chalet-home.com.ua'); // Від даної пошти сайт відправляє листи
-define('SYS_PASSWORD', '5bb0b253d211'); // Сіль для кешування критичних даних (паролі)
+define('SITE_EMAIL', 'info@chalet-home.com'); // Від даної пошти сайт відправляє листи
+define('SYS_PASSWORD', '56074dc8074c'); // Сіль для кешування критичних даних (паролі)
 $useWWW = false; // Автовиправлення ОСНОВНОЇ адреси (не мультомовної якщо використовується піддомен)
 $multilanguage_type = 'main domain'; // Якщо false то сайт НЕ мультимовний! може бути: false, "*.domain.com.ua" (адреса по головному домену, існування піддоменів мов на роботу не впливає), 'main domain' (мультимовність site.com/en/link..)
 $_SESSION['all_languages'] = array('uk', 'ru', 'en', 'sk', 'cz'); // Список всіх  мов в масиві, перша мова - мова по замовчуванню
