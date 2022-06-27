@@ -92,7 +92,7 @@
                                               </div>
             </div>
             </div>		</header>
-		<main class="container d-flex h-center v-center text-center">
+		<main class="container d-flex h-center v-center text-center error-page">
     <div>
         <span class="error-title">404</span>
         <span>That’s an error!</span>
@@ -102,20 +102,24 @@
 </main>
 
 <style>
+    main {
+        background-color: #1f1206;
+    }
     .error-title {
         font-size: 200px;
         display: block;
+        filter: drop-shadow(2px 4px 6px black);
     }
     main .btn {
         margin-top: 15px;
         padding: 5px;
         text-align: center;
         font-weight: 600;
-        background: #2f283d;
-        color: #fff;
-        display: block;
+        font-family: "Kyiv Type Titling regular";
+        display: flex;
         width: auto;
     }
+  
 </style><footer class="footer">
     <div class="container footer-constructor">
         <form id="request-form" method="POST" action="http://localhost/chalet-home.com.ua/save/request-form">

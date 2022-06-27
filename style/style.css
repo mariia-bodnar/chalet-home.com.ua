@@ -11,6 +11,7 @@ body {
   font: normal 14px arial, "Helvetica CY", "Nimbus Sans L", Sans-serif;
   color: #999;
   overflow-y: scroll;
+  background-image: url(/style/icons/arrow.svg);
 }
 /* TYPOGRAPHY */
 /* REGULAR */
@@ -1342,10 +1343,21 @@ strong {
   color: #956d3a;
   text-decoration: underline;
 }
-.art1_text-item a::first-letter {
+.frame_houses .art1_text-item a::first-letter {
   font-size: initial;
 }
 .article a {
+  text-decoration: none;
+}
+.contacts p::first-letter {
+  font-size: inherit;
+  font-family: 'Helvetica CY', 'Nimbus Sans L', Sans-serif;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+.contacts a {
+  font-family: 'Helvetica CY', 'Nimbus Sans L', Sans-serif;
   text-decoration: none;
 }
 /* faq */
@@ -1365,4 +1377,20 @@ strong {
 .faq .answear {
   display: none;
   padding: 6px  30px;
+}
+/* 404 page */
+.error-page .btn {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #ffffffa1;
+  font-family: "Kyiv Type Titling regular";
+  text-transform: initial;
+}
+.error-page .btn::before {
+  content: "";
+  background: center url(icons/arrow.svg) no-repeat;
+  width: 40px;
+  height: 40px;
+  transform: rotate(180deg)
 }

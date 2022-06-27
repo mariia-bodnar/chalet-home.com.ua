@@ -54,7 +54,7 @@
                             <?php } ?>
                         </div>
 
-                        <div class="art1_text-item"><?php
+                        <div class="art1_text-item contacts"><?php
 
                                                     foreach ($_SESSION['alias']->section as $section) {
                                                     ?><?= html_entity_decode($section->value) ?><?php } ?></div>
