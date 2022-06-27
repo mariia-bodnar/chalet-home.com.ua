@@ -19,59 +19,69 @@
 	<?= html_entity_decode($_SESSION['option']->global_MetaTags, ENT_QUOTES) ?>
 	<?= html_entity_decode($_SESSION['alias']->meta, ENT_QUOTES) ?>
 
-	<link rel="shortcut icon" href="<?= SERVER_URL ?>style/admin/images/whitelion-black.png">
+	<link rel="shortcut icon" href="<?= SERVER_URL ?>style/icons/favicon.ico">
 
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 	<link href="<?= SERVER_URL ?>assets/font-awesome-5.15.1/css/all.min.css" rel="stylesheet" />
+	<link  href="<?= SERVER_URL ?>assets/swiper/swiper-bundle.min.css" rel="stylesheet" />
 	<link href="<?= SERVER_URL ?>style/ws__main.css" rel="stylesheet" />
 	<link href="<?= SERVER_URL ?>style/style.css" rel="stylesheet" />
 </head>
 
 <body>
 	<div class="wrapper">
+		<header>
+			<?php
+			include "@commons/navbar.php";
+			include "@commons/banner.php";
+			?>
+		</header>
 		<?php
-		include "@commons/header.php";
 		if (isset($view_file)) require_once($view_file . '.php');
 		include "@commons/footer.php";
 		?>
+		<div class="scroll_to_top"></div>
 	</div>
-		<script type="text/javascript" src="<?= SERVER_URL ?>assets/jquery/jquery-3.5.1.min.js"></script>
-		<script type="text/javascript" src="<?= SERVER_URL ?>assets/sticky.min.js"></script>
-		<script type="text/javascript">
-			var SERVER_URL = '<?= SERVER_URL ?>';
-			var SITE_URL = '<?= SITE_URL ?>';
-			var ALIAS_URL = '<?= SITE_URL . $_SESSION['alias']->alias ?>/';
+	<script type="text/javascript" src="<?= SERVER_URL ?>assets/jquery/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="<?= SERVER_URL ?>assets/sticky.min.js"></script>
+	<script type="text/javascript" src="<?= SERVER_URL ?>assets/swiper/swiper-bundle.min.js"></script>
+	<script type="text/javascript">
+		var SERVER_URL = '<?= SERVER_URL ?>';
+		var SITE_URL = '<?= SITE_URL ?>';
+		var ALIAS_URL = '<?= SITE_URL . $_SESSION['alias']->alias ?>/';
 
-			var sticky = new Sticky('header.sticky');
-			$('header i.fa-bars').click(function(event) {
-				$('header').addClass('mobile');
-			});
-			$('header i.fa-times').click(function(event) {
-				$('header').removeClass('mobile');
-			});
-			$('.modal .close, .modal .fa-times').click(function(event) {
-				event.preventDefault;
-				$(this).closest('.modal').hide()
-				$('#modal-bg').hide()
+		var sticky = new Sticky('header.sticky');
+		$('header i.fa-bars').click(function(event) {
+			$('header').addClass('mobile');
+		});
+		$('header i.fa-times').click(function(event) {
+			$('header').removeClass('mobile');
+		});
+		$('.modal .close, .modal .fa-times').click(function(event) {
+			event.preventDefault;
+			$(this).closest('.modal').hide()
+			$('#modal-bg').hide()
+		});
+	</script>
+	<?php
+	if (!empty($_SESSION['alias']->js_load)) {
+		foreach ($_SESSION['alias']->js_load as $js) {
+			echo '<script type="text/javascript" src="' . SERVER_URL . $js . '"></script> ';
+		}
+	}
+	if (!empty($_SESSION['alias']->js_init)) {
+	?>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				<?php foreach ($_SESSION['alias']->js_init as $js) {
+					echo $js . '; ';
+				} ?>
 			});
 		</script>
-		<?php
-		if (!empty($_SESSION['alias']->js_load)) {
-			foreach ($_SESSION['alias']->js_load as $js) {
-				echo '<script type="text/javascript" src="' . SERVER_URL . $js . '"></script> ';
-			}
-		}
-		if (!empty($_SESSION['alias']->js_init)) {
-		?>
-			<script type="text/javascript">
-				$(document).ready(function() {
-					<?php foreach ($_SESSION['alias']->js_init as $js) {
-						echo $js . '; ';
-					} ?>
-				});
-			</script>
-		<?php } ?>
-
+	<?php } ?>
+	<script type="text/javascript" src="<?= SERVER_URL ?>js/typed.min.js"></script>
+	
+	<script type="text/javascript" src="<?= SERVER_URL ?>js/script.js"></script>
 </body>
 
 </html>

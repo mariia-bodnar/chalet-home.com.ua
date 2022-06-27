@@ -146,7 +146,6 @@
 /**--------------------------------------------------------------------------------*/
 /* RESET STYLES */
 /**--------------------------------------------------------------------------------*/
-html { overflow-y: scroll; }
 
 *, *:before, *:after { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -156,9 +155,9 @@ html { overflow-y: scroll; }
 
 html:not(.touch-screen)::-webkit-scrollbar, html:not(.touch-screen) *::-webkit-scrollbar { width: 6px; height: 6px; }
 
-html:not(.touch-screen)::-webkit-scrollbar-track, html:not(.touch-screen) *::-webkit-scrollbar-track { background: #FFF; }
+html:not(.touch-screen)::-webkit-scrollbar-track, html:not(.touch-screen) *::-webkit-scrollbar-track { background: #b7814f94; }
 
-html:not(.touch-screen)::-webkit-scrollbar-thumb, html:not(.touch-screen) *::-webkit-scrollbar-thumb { background: var(--color-primary); }
+html:not(.touch-screen)::-webkit-scrollbar-thumb, html:not(.touch-screen) *::-webkit-scrollbar-thumb { background: #2d1e14; }
 
 :focus, :active, :visited { outline: none; }
 
@@ -684,8 +683,8 @@ textarea::placeholder {
 /* for input, select, textarea.. */
 .danger {
   color: #fff !important;
-  background-color: var(--colort-danger); !important;
-  border: 1px solid var(--colort-danger); !important
+  background-color: var(--colort-danger)!important;
+  border: 1px solid var(--colort-danger)!important
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
