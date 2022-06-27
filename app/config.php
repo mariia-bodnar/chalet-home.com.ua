@@ -6,8 +6,8 @@ $config['autoload'] = array('db', 'data');
 $config['recaptcha'] = array(
 	'public' => '',
 	'secret' => '',
-	'public_v3' => '6LfBdFwgAAAAAKEayLYijfszdij-L8p49ABY2Kcp',
-	'secret_v3' => '6LfBdFwgAAAAABjluE0LAOZz5MuHJNBWgXTEBgR2'
+	'public_v3' => '6LfrBaQgAAAAANJ7i5sp9rIYniTV48TsT3KUGO7-',
+	'secret_v3' => '6LfrBaQgAAAAACQqd8yxKvzEBOT36z5XWRROc0RV'
 );
 $config['facebook'] = array('appId' => 'FACEBOOK_APP_ID', 'secret' => 'FACEBOOK_SECRET_KEY');
 $config['googlesignin'] = array('clientId' => 'GOOGLE_CLIENT_ID', 'secret' => 'GOOGLE_API_SECRET');

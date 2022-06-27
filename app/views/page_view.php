@@ -29,6 +29,7 @@
 </head>
 
 <body>
+	<?php if ($_SESSION['alias']->alias != 'login') { ?>
 	<div class="wrapper">
 		<header>
 			<?php
@@ -42,6 +43,20 @@
 		?>
 		<div class="scroll_to_top"></div>
 	</div>
+	<?php }else { ?>
+		<div class="wrapper">
+		<header>
+			<?php
+			include "@commons/navbar.php";
+			?>
+		</header>
+		<?php
+		if (isset($view_file)) require_once($view_file . '.php');
+		include "@commons/footer.php";
+		?>
+		<div class="scroll_to_top"></div>
+	</div>
+		<?php } ?>
 	<script type="text/javascript" src="<?= SERVER_URL ?>assets/jquery/jquery-3.5.1.min.js"></script>
 	<script type="text/javascript" src="<?= SERVER_URL ?>assets/sticky.min.js"></script>
 	<script type="text/javascript" src="<?= SERVER_URL ?>assets/swiper/swiper-bundle.min.js"></script>

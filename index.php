@@ -1,7 +1,8 @@
 <?php
 
 //--- CMS White Lion 1.3 ---//
-
+if($_SERVER['REQUEST_URI'] == '/our_projects')
+ @header('Location: /our_projects/nashi-roboty');
 $https = false;
 if($https && (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off"))
 {

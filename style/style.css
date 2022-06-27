@@ -11,7 +11,6 @@ body {
   font: normal 14px arial, "Helvetica CY", "Nimbus Sans L", Sans-serif;
   color: #999;
   overflow-y: scroll;
-  background-image: url(/style/icons/arrow.svg);
 }
 /* TYPOGRAPHY */
 /* REGULAR */
@@ -1348,6 +1347,9 @@ strong {
 }
 .article a {
   text-decoration: none;
+}
+.article a img {
+  width: 100%;
 }
 .contacts p::first-letter {
   font-size: inherit;
